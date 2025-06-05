@@ -7,18 +7,24 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/foods")
 @AllArgsConstructor
 public class FoodController {
    private final FoodService foodService;
+
+   @GetMapping
+   public ResponseEntity<List<FoodResponse>> getAllFoods() {
+
+      return new ResponseEntity<>(foodService.getAllFoods(), HttpStatus.OK);
+   }
 
    @PostMapping
    public FoodResponse addFood(@RequestPart("food") String foodString, @RequestPart("file") MultipartFile file) {
@@ -34,4 +40,16 @@ public class FoodController {
       return foodService.addFood(request, file);
    }
 
+   @GetMapping(path = "/{id}")
+   public ResponseEntity<FoodResponse> getFoodById(@PathVariable String id) {
+
+      return new ResponseEntity<>(foodService.getFoodById(id), HttpStatus.OK);
+   }
+
+   @DeleteMapping(path = "/{id}")
+   public ResponseEntity<FoodResponse> deleteFoodById(@PathVariable String id) {
+      foodService.deleteFoodById(id);
+
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+   }
 }

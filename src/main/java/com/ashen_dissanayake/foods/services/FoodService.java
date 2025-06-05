@@ -4,8 +4,18 @@ import com.ashen_dissanayake.foods.io.FoodRequest;
 import com.ashen_dissanayake.foods.io.FoodResponse;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 public interface FoodService {
-   String uploadFile(MultipartFile file);
+   String uploadFoodImage(MultipartFile file);
+
+   List<FoodResponse> getAllFoods();
 
    FoodResponse addFood(FoodRequest request, MultipartFile file);
+
+   FoodResponse getFoodById(String id);
+
+   boolean deleteFoodImage(String fileName);
+
+   void deleteFoodById(String id);
 }

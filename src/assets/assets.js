@@ -28,24 +28,32 @@ const menuItems = [
 		icon: burger,
 	},
 	{
-		category: "Burger",
-		icon: burger,
+		category: "Ice-cream",
+		icon: icecream,
+	},
+	{
+		category: "Pizza",
+		icon: pizza,
+	},
+	{
+		category: "Salad",
+		icon: salad,
 	},
 	{
 		category: "Burger",
 		icon: burger,
 	},
 	{
-		category: "Burger",
-		icon: burger,
+		category: "Ice-cream",
+		icon: icecream,
 	},
 	{
-		category: "Burger",
-		icon: burger,
+		category: "Pizza",
+		icon: pizza,
 	},
 	{
-		category: "Burger",
-		icon: burger,
+		category: "Salad",
+		icon: salad,
 	},
 	{
 		category: "Burger",

@@ -38,3 +38,8 @@
 	background-color: rgb(200, 193, 193);
 	border: none;
 }
+
+.explore-menu-list-item .active {
+	border: 4px solid tomato;
+	paddin: 2px;
+}

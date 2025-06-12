@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchFoodDetails } from "../../services/foodServices";
 import { toast } from "react-toastify";
+import { StoreContext } from "../../context/StoreContext";
 
 const FoodDetails = () => {
+	const { increaseQuantity } = useContext(StoreContext);
+	const navigate = useNavigate();
+
 	const { id } = useParams();
 
 	const [data, setData] = useState({});
@@ -19,6 +23,11 @@ const FoodDetails = () => {
 		};
 		loadFoodDetails();
 	}, [id]);
+
+	const addToCart = () => {
+		increaseQuantity(data.id);
+		navigate("/cart");
+	};
 
 	return (
 		<section className="py-5">
@@ -47,6 +56,7 @@ const FoodDetails = () => {
 							<button
 								className="btn btn-outline-dark flex-shrink-0"
 								type="button"
+								onClick={addToCart}
 							>
 								<i className="bi-cart-fill me-1"></i>
 								Add to cart

@@ -1,9 +1,17 @@
-import React from "react";
-import { assets } from "../../assets/assets";
-import "./MenuBar.css";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import "./MenuBar.css";
+import { assets } from "../../assets/assets";
+import { StoreContext } from "../../context/StoreContext";
 
 const MenuBar = () => {
+	const { quantities } = useContext(StoreContext);
+	const [active, setActive] = useState("Home");
+
+	const uniqueItems = Object.values(quantities).filter(
+		(quantity) => quantity > 0
+	).length;
+
 	return (
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container">
@@ -11,7 +19,7 @@ const MenuBar = () => {
 					src={assets.icon}
 					height={48}
 					width={48}
-					className="mx-2 me-lg-3 "
+					className="mx-2 me-lg-3"
 				/>
 				<button
 					className="navbar-toggler"
@@ -30,17 +38,40 @@ const MenuBar = () => {
 				>
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
-							<Link className="nav-link" aria-current="page" to="/">
+							<Link
+								className={
+									active === "home" ? "nav-link fw-bold" : "nav-link"
+								}
+								aria-current="page"
+								to="/"
+								onClick={() => setActive("home")}
+							>
 								Home
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/explore">
+							<Link
+								className={
+									active === "explore"
+										? "nav-link fw-bold"
+										: "nav-link"
+								}
+								to="/explore"
+								onClick={() => setActive("explore")}
+							>
 								Explore
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/contact-us">
+							<Link
+								className={
+									active === "contactUs"
+										? "nav-link fw-bold"
+										: "nav-link"
+								}
+								to="/contact-us"
+								onClick={() => setActive("contactUs")}
+							>
 								Contact Us
 							</Link>
 						</li>
@@ -57,18 +88,22 @@ const MenuBar = () => {
 						</button>
 					</form> */}
 					<div className="d-flex align-items-center gap-4">
-						<div className="position-relative">
-							<img
-								src={assets.cart}
-								height={32}
-								width={32}
-								className="position-relative"
-							/>
-							<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-								0
-								<span className="visually-hidden">unread messages</span>
-							</span>
-						</div>
+						<Link to="/cart">
+							<div className="position-relative">
+								<img
+									src={assets.cart}
+									height={32}
+									width={32}
+									className="position-relative"
+								/>
+								<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									{uniqueItems}
+									<span className="visually-hidden">
+										unread messages
+									</span>
+								</span>
+							</div>
+						</Link>
 						<button className="btn btn-outline-primary" type="button">
 							Login
 						</button>

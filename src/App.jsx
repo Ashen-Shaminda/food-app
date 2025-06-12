@@ -6,6 +6,7 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import Explore from "./pages/Explore/Explore";
 import FoodDetails from "./pages/FoodDetails/FoodDetails";
 import NotFound from "./pages/NotFound/NotFound";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/explore" element={<Explore />} />
 				<Route path="/contact-us" element={<ContactUs />} />
 				<Route path="/food/:id" element={<FoodDetails />} />
+				<Route path="/cart" element={<Cart />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

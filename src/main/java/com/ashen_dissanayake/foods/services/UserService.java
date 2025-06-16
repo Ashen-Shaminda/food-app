@@ -6,4 +6,6 @@ import com.ashen_dissanayake.foods.io.UserResponse;
 public interface UserService {
 
    UserResponse registerUser(UserRequest userRequest);
+
+   String findByUserId();
 }

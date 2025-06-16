@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/foods")
 @AllArgsConstructor
+@CrossOrigin("*")
 public class FoodController {
    private final FoodService foodService;
 
@@ -27,7 +28,7 @@ public class FoodController {
    }
 
    @PostMapping
-   public FoodResponse addFood(@RequestPart("food") String foodString, @RequestPart("file") MultipartFile file) {
+   public ResponseEntity<FoodResponse> addFood(@RequestPart("food") String foodString, @RequestPart("file") MultipartFile file) {
       ObjectMapper objectMapper = new ObjectMapper();
       FoodRequest request;
 
@@ -36,8 +37,9 @@ public class FoodController {
       } catch (JsonProcessingException ex) {
          throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid json format");
       }
+      foodService.addFood(request, file);
 
-      return foodService.addFood(request, file);
+      return new ResponseEntity<>(HttpStatus.CREATED) ;
    }
 
    @GetMapping(path = "/{id}")

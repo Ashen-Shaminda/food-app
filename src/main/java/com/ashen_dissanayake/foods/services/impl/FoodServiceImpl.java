@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 @Service
 public class FoodServiceImpl implements FoodService {
    private final FoodRepository foodRepository;
-
    private final S3Client s3Client;
 
    @Value("${aws.s3.bucketname}")

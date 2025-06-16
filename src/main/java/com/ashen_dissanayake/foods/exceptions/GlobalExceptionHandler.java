@@ -1,4 +1,5 @@
 package com.ashen_dissanayake.foods.exceptions;
 
-public class GlobalExceptionHandler{
+//@RestControllerAdvice
+public class GlobalExceptionHandler {
 }

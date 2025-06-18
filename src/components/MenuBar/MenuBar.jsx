@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./MenuBar.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
@@ -11,6 +11,8 @@ const MenuBar = () => {
 	const uniqueItems = Object.values(quantities).filter(
 		(quantity) => quantity > 0
 	).length;
+
+	const navigate = useNavigate();
 
 	return (
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -104,10 +106,18 @@ const MenuBar = () => {
 								</span>
 							</div>
 						</Link>
-						<button className="btn btn-outline-primary" type="button">
+						<button
+							className="btn btn-outline-primary"
+							type="button"
+							onClick={() => navigate("/login")}
+						>
 							Login
 						</button>
-						<button className="btn btn-outline-success" type="button">
+						<button
+							className="btn btn-outline-success"
+							type="button"
+							onClick={() => navigate("/register")}
+						>
 							Register
 						</button>
 					</div>

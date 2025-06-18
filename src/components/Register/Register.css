@@ -1,0 +1,12 @@
+.login-container {
+	background-image: url("../../assets/background.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	height: 100vh;
+}
+
+.login-container .d-flex {
+	height: inherit;
+}

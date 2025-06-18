@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../../services/userServices";
+import { registerUser } from "../../services/authServices";
 import { toast } from "react-toastify";
 
 const Register = () => {

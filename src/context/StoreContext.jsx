@@ -1,11 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchFoodList } from "../services/foodServices";
 
+// TODO : fix the warning.
 export const StoreContext = createContext(null);
 
 export const StoreContextProvider = (props) => {
 	const [foodList, setFoodList] = useState([]);
 	const [quantities, setQuantities] = useState({});
+	const [token, setToken] = useState("");
 
 	const increaseQuantity = (foodId) => {
 		setQuantities((prev) => ({ ...prev, [foodId]: (prev[foodId] || 0) + 1 }));
@@ -32,6 +34,8 @@ export const StoreContextProvider = (props) => {
 		decreaseQuantity,
 		quantities,
 		removeItems,
+		token,
+		setToken,
 	};
 
 	useEffect(() => {

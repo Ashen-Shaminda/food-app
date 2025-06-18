@@ -10,11 +10,13 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 	return (
 		<div>
 			<MenuBar />
+			<ToastContainer />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/explore" element={<Explore />} />

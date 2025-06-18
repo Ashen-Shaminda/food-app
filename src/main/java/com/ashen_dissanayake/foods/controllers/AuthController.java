@@ -22,6 +22,7 @@ public class AuthController {
    private final UserDetailsService userDetailsService;
    private final JwtUtil jwtUtil;
 
+   // TODO : Implement save token as a cookie.
    @PostMapping(path = "/login")
    public AuthenticationResponse login(@RequestBody AuthenticationRequest request) {
       authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));

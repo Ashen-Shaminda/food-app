@@ -1,9 +1,10 @@
 package com.ashen_dissanayake.foods.services.impl;
 
-import com.ashen_dissanayake.foods.entity.UserEntity;
-import com.ashen_dissanayake.foods.io.UserRequest;
-import com.ashen_dissanayake.foods.io.UserResponse;
+import com.ashen_dissanayake.foods.domain.entities.UserEntity;
+import com.ashen_dissanayake.foods.domain.dtos.UserRequest;
+import com.ashen_dissanayake.foods.domain.dtos.UserResponse;
 import com.ashen_dissanayake.foods.repository.UserRepository;
+import com.ashen_dissanayake.foods.services.AuthenticationFacade;
 import com.ashen_dissanayake.foods.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

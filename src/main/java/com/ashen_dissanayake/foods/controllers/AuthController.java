@@ -1,7 +1,7 @@
 package com.ashen_dissanayake.foods.controllers;
 
-import com.ashen_dissanayake.foods.io.AuthenticationRequest;
-import com.ashen_dissanayake.foods.io.AuthenticationResponse;
+import com.ashen_dissanayake.foods.domain.dtos.AuthenticationRequest;
+import com.ashen_dissanayake.foods.domain.dtos.AuthenticationResponse;
 import com.ashen_dissanayake.foods.util.JwtUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

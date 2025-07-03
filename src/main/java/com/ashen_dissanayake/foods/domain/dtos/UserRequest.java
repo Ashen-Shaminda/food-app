@@ -1,4 +1,4 @@
-package com.ashen_dissanayake.foods.io;
+package com.ashen_dissanayake.foods.domain.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

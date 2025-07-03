@@ -1,7 +1,7 @@
 package com.ashen_dissanayake.foods.controllers;
 
-import com.ashen_dissanayake.foods.io.UserRequest;
-import com.ashen_dissanayake.foods.io.UserResponse;
+import com.ashen_dissanayake.foods.domain.dtos.UserRequest;
+import com.ashen_dissanayake.foods.domain.dtos.UserResponse;
 import com.ashen_dissanayake.foods.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

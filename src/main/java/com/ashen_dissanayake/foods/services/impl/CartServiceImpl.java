@@ -1,8 +1,8 @@
 package com.ashen_dissanayake.foods.services.impl;
 
-import com.ashen_dissanayake.foods.entity.CartEntity;
-import com.ashen_dissanayake.foods.io.CartRequest;
-import com.ashen_dissanayake.foods.io.CartResponse;
+import com.ashen_dissanayake.foods.domain.entities.CartEntity;
+import com.ashen_dissanayake.foods.domain.dtos.CartRequest;
+import com.ashen_dissanayake.foods.domain.dtos.CartResponse;
 import com.ashen_dissanayake.foods.repository.CartRepository;
 import com.ashen_dissanayake.foods.services.CartService;
 import com.ashen_dissanayake.foods.services.UserService;

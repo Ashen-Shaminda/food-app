@@ -1,7 +1,7 @@
 package com.ashen_dissanayake.foods.controllers;
 
-import com.ashen_dissanayake.foods.io.FoodRequest;
-import com.ashen_dissanayake.foods.io.FoodResponse;
+import com.ashen_dissanayake.foods.domain.dtos.FoodRequest;
+import com.ashen_dissanayake.foods.domain.dtos.FoodResponse;
 import com.ashen_dissanayake.foods.services.FoodService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

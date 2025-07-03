@@ -1,6 +1,6 @@
 package com.ashen_dissanayake.foods.services;
 
-import com.ashen_dissanayake.foods.entity.UserEntity;
+import com.ashen_dissanayake.foods.domain.entities.UserEntity;
 import com.ashen_dissanayake.foods.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.User;

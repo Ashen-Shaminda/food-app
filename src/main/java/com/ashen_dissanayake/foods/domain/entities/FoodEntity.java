@@ -1,5 +1,4 @@
-package com.ashen_dissanayake.foods.entity;
-
+package com.ashen_dissanayake.foods.domain.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,18 +8,22 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "users")
-@Builder
-public class UserEntity {
-
+@Document(collection = "foods")
+//TODO : put inside entities
+public class FoodEntity {
    @Id
    private String id;
 
    private String name;
 
-   private String email;
+   private String description;
 
-   private String password;
+   private double price;
+
+   private String category;
+
+   private String imageUrl;
 }

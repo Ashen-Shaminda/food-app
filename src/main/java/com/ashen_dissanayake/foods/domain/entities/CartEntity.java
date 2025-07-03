@@ -1,4 +1,4 @@
-package com.ashen_dissanayake.foods.entity;
+package com.ashen_dissanayake.foods.domain.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

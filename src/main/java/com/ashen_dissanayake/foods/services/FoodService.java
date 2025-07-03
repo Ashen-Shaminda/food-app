@@ -1,7 +1,7 @@
 package com.ashen_dissanayake.foods.services;
 
-import com.ashen_dissanayake.foods.io.FoodRequest;
-import com.ashen_dissanayake.foods.io.FoodResponse;
+import com.ashen_dissanayake.foods.domain.dtos.FoodRequest;
+import com.ashen_dissanayake.foods.domain.dtos.FoodResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

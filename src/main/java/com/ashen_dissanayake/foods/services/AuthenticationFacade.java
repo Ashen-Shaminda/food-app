@@ -1,4 +1,4 @@
-package com.ashen_dissanayake.foods.services.impl;
+package com.ashen_dissanayake.foods.services;
 
 import org.springframework.security.core.Authentication;
 

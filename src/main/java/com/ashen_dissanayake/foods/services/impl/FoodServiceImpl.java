@@ -1,8 +1,8 @@
 package com.ashen_dissanayake.foods.services.impl;
 
-import com.ashen_dissanayake.foods.entity.FoodEntity;
-import com.ashen_dissanayake.foods.io.FoodRequest;
-import com.ashen_dissanayake.foods.io.FoodResponse;
+import com.ashen_dissanayake.foods.domain.entities.FoodEntity;
+import com.ashen_dissanayake.foods.domain.dtos.FoodRequest;
+import com.ashen_dissanayake.foods.domain.dtos.FoodResponse;
 import com.ashen_dissanayake.foods.repository.FoodRepository;
 import com.ashen_dissanayake.foods.services.FoodService;
 import org.springframework.beans.factory.annotation.Value;

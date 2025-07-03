@@ -1,7 +1,7 @@
 package com.ashen_dissanayake.foods.services;
 
-import com.ashen_dissanayake.foods.io.CartRequest;
-import com.ashen_dissanayake.foods.io.CartResponse;
+import com.ashen_dissanayake.foods.domain.dtos.CartRequest;
+import com.ashen_dissanayake.foods.domain.dtos.CartResponse;
 
 public interface CartService {
 

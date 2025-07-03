@@ -1,6 +1,6 @@
 package com.ashen_dissanayake.foods.repository;
 
-import com.ashen_dissanayake.foods.entity.FoodEntity;
+import com.ashen_dissanayake.foods.domain.entities.FoodEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

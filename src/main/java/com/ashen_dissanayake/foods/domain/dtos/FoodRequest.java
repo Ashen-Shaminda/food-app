@@ -1,25 +1,20 @@
-package com.ashen_dissanayake.foods.io;
+package com.ashen_dissanayake.foods.domain.dtos;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//TODO : Dtos
-public class FoodResponse {
-   private String id;
 
+//TODO : rename this dtos and put inside dtos
+public class FoodRequest {
    private String name;
 
    private String description;
 
-   private String imageUrl;
-
    private double price;
 
-   private String category;
+   private String Category;
 }

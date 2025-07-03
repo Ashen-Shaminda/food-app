@@ -1,4 +1,4 @@
-package com.ashen_dissanayake.foods.io;
+package com.ashen_dissanayake.foods.domain.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserResponse {
+public class CartRequest {
 
-   private String id;
+   private String foodId;
 
-   private String name;
-
-   private String email;
 }

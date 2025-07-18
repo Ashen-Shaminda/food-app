@@ -5,7 +5,7 @@ import com.ashen_dissanayake.foods.domain.dtos.OrderRequest;
 import com.ashen_dissanayake.foods.domain.dtos.OrderResponse;
 import com.ashen_dissanayake.foods.domain.entities.OrderEntity;
 import com.ashen_dissanayake.foods.repository.OrderRepository;
-import com.ashen_dissanayake.foods.services.StripeService;
+import com.ashen_dissanayake.foods.services.OrderService;
 import com.ashen_dissanayake.foods.services.UserService;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -14,9 +14,11 @@ import com.stripe.param.checkout.SessionCreateParams;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 @AllArgsConstructor
-public class StripeServiceImpl implements StripeService {
+public class OrderServiceImpl implements OrderService {
 
    private final OrderRepository orderRepository;
    private final UserService userService;
@@ -64,8 +66,8 @@ public class StripeServiceImpl implements StripeService {
       Session session = null;
       try {
          session = Session.create(params);
-         newOrder.setSessionId(session.getId());
-         newOrder.setSessionURL(session.getUrl());
+         newOrder.setStripeSessionId(session.getId());
+         newOrder.setStripeSessionURL(session.getUrl());
          String loggedInUserId = userService.findByUserId();
          newOrder.setUserId(loggedInUserId);
          newOrder = orderRepository.save(newOrder);
@@ -78,14 +80,23 @@ public class StripeServiceImpl implements StripeService {
       return convertToResponse(newOrder);
    }
 
+   @Override
+   public void verifyPayment(Map<String, String> paymentData, String status) {
+      String stripeOrderId = paymentData.get("session_id");
+      OrderEntity  existingOrder = orderRepository.findById(stripeOrderId).orElseThrow(() -> new RuntimeException("Order not found."));
+      existingOrder.setPaymentStatus(status);
+
+   }
+
    private OrderResponse convertToResponse(OrderEntity orderEntity) {
       return OrderResponse.builder()
               .id(orderEntity.getId())
               .amount(orderEntity.getAmount())
               .userId(orderEntity.getUserId())
               .userAddress(orderEntity.getUserAddress())
-              .sessionId(orderEntity.getSessionId())
-              .sessionURL(orderEntity.getSessionURL())
+              .stripeSessionId(orderEntity.getStripeSessionId())
+              .stripeSessionURL(orderEntity.getStripeSessionURL())
+              .stripePaymentId(orderEntity.getStripePaymentId())
               .paymentStatus(orderEntity.getPaymentStatus())
               .orderStatus(orderEntity.getOrderStatus())
               .email(orderEntity.getEmail())

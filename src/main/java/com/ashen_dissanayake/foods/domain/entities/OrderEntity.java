@@ -28,9 +28,11 @@ public class OrderEntity {
 
    private Long amount;
 
-   private String sessionId;
+   private String stripeSessionId;
 
-   private String sessionURL;
+   private String stripeSessionURL;
+
+   private String stripePaymentId;
 
    private String paymentStatus;
 

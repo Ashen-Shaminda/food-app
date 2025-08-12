@@ -82,24 +82,6 @@ A modern food delivery application built with Spring Boot that allows users to b
 
 The application can be configured through the `application.properties` file:
 
-```properties
-# MongoDB Configuration
-spring.data.mongodb.uri=mongodb://localhost:27017/food_delivery
-
-# AWS Configuration
-aws.access.key=${AWS_ACCESS_KEY}
-aws.secret.key=${AWS_SECRET_KEY}
-aws.region=us-east-1
-aws.s3.bucketname=springfoodsapp
-
-# JWT Configuration
-jwt.secret.key=460cba64ba712368da642a4804db2b9051dd8f01b9eda7ec
-
-# Stripe Configuration
-stripe.public.key=${STRIPE_PUBLIC_KEY}
-stripe.secret.key=${STRIPE_SECRET_KEY}
-```
-
 ## Project Structure
 
 The project follows a standard Spring Boot structure:

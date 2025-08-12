@@ -105,7 +105,6 @@ The application integrates with Stripe for payment processing. When an order is 
 
 ## Future Improvements
 
-- Add user roles (admin, customer)
 - Implement order tracking
 - Add email notifications
 - Add unit and integration tests
